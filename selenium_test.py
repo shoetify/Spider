@@ -16,6 +16,8 @@ all_matches_button = driver.find_element(by='xpath', value='//label[@analytics-e
 # click on it
 all_matches_button.click()
 
+time.sleep(1)
+
 drop_down = Select(driver.find_element(by='id', value='country'))
 drop_down.select_by_visible_text('France')
 
