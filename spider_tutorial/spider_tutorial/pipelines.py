@@ -10,14 +10,16 @@ import logging
 import pymongo
 import sqlite3
 
+import setting
+import E:\pythonProject\Spider\setting.py
+
 
 class MongodbPipeline:
     collection_name = 'transcripts'
 
     def open_spider(self, spider):
         logging.warning("Spider Opened - Pipeline")
-        self.client = pymongo.MongoClient(
-            "mongodb+srv://shoetify:shoetify@cluster0.i0m1ot4.mongodb.net/?retryWrites=true&w=majority")
+        self.client = pymongo.MongoClient(setting.MONGODB_PWD)
         self.db = self.client['My_Database']
 
     def close_spider(self, spider):
